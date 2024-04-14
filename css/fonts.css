@@ -1,0 +1,19 @@
+@font-face {
+  font-family: sans-light;
+  src: url(../fonts/sans-light.ttf);
+}
+
+@font-face {
+  font-family: sans-regular;
+  src: url(../fonts/sans-regular.ttf);
+}
+
+@font-face {
+  font-family: sans-medium;
+  src: url(../fonts/sans-medium.ttf);
+}
+
+@font-face {
+  font-family: sans-bold;
+  src: url(../fonts/sans-bold.ttf);
+}

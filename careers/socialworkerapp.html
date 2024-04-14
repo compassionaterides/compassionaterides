@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Worker - Compassionate Rides</title>
+    <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/forms.css">
+    <link rel="stylesheet" href="../css/navigation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+</head>
+<body>
+    <div class="content">
+        <a href="socialworker.html" class="go-back"><i class="ri-home-heart-line"></i> Go back to Career Home</a>
+        <div class="form">
+            <div class="header">
+                <h2>Social Worker</h2>
+            </div>
+            <div class="body">
+                <div class="pagination">
+                    <div class="number active">1</div>
+                    <div class="bar"></div>
+                    <div class="number">2</div>
+                    <div class="bar"></div>
+                    <div class="number">3</div>
+                    <div class="bar"></div>
+                    <div class="number">4</div>
+                    <div class="bar"></div>
+                    <div class="number">5</div>
+                </div>
+                <div class="steps">
+                    <div class="step">
+                        <h4>Personal</h4>
+                        <p>Let us get to know a little about you.</p>
+                        <div class="grid">
+                            <div class="col">
+                                <label for="firstName">First Name <span class="required">*</span></label>
+                                <input type="text" id="firstName" autofocus>
+                            </div>
+                            <div class="col">
+                                <label for="lastName">Last Name <span class="required">*</span></label>
+                                <input type="text" id="lastName">
+                            </div>
+                            <div class="col">
+                                <label for="middleInitial">Middle Initial</label>
+                                <input type="text" id="middleInitial">
+                            </div>
+                            <div class="col">
+                                <label for="dob">Date of Birth <span class="required">*</span></label>
+                                <input type="date" id="dob">
+                            </div>
+                            <div class="col">
+                                <label for="email">Email <span class="required">*</span></label>
+                                <input type="text" id="email">
+                            </div>
+                            <div class="col">
+                                <label for="socialSecurity">Social Security Number <span class="required">*</span></label>
+                                <input type="text" id="socialSecurity">
+                            </div>
+                            <div class="col">
+                                <label for="addressLine1">Address Line 1 <span class="required">*</span></label>
+                                <input type="text" id="addressLine1">
+                            </div>
+                            <div class="col">
+                                <label for="addressLine2">Address Line 2</label>
+                                <input type="text" id="addressLine2">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <h4>Employment Eligibility</h4>
+                        <p>To what extent can you work for us?</p>
+                        <div class="grid">
+                            <div class="col">
+                                <label for="citizen-yes">Are you a citizen in the U.S.? <span class="required">*</span></label>
+                                <div class="grid">
+                                    <div class="radio">
+                                        <input type="radio" id="citizen-yes" name="citizen" onclick="usWorkCheck();" value="Yes">
+                                        <label for="citizen-yes">Yes</label>
+                                    </div>
+                                    <div class="radio">
+                                        <input type="radio" id="citizen-no" name="citizen" onclick="usWorkCheck();" value="No">
+                                        <label for="citizen-no">No</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col" id="usWorkYes" style="display: none;">
+                                <label for="uswork-yes">Are you able to work in the U.S.? <span class="required">*</span></label>
+                                <div class="grid">
+                                    <div class="radio">
+                                        <input type="radio" id="uswork-yes" name="uswork" value="Yes">
+                                        <label for="uswork-yes">Yes</label>
+                                    </div>
+                                    <div class="radio">
+                                        <input type="radio" id="uswork-no" name="uswork" value="No">
+                                        <label for="uswork-no">No</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid">
+                            <div class="col">
+                                <label for="prevemployment-yes">Have you worked with us before? <span class="required">*</span></label>
+                                <div class="grid">
+                                    <div class="radio">
+                                        <input type="radio" id="prevemployment-yes" name="prevemployment" value="Yes">
+                                        <label for="prevemployment-yes">Yes</label>
+                                    </div>
+                                    <div class="radio">
+                                        <input type="radio" id="prevemployment-no" name="prevemployment" value="No">
+                                        <label for="prevemployment-no">No</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid">
+                            <div class="col">
+                                <label for="felony-yes">Have you ever been convicted of a felony? <span class="required">*</span></label>
+                                <div class="grid">
+                                    <div class="radio">
+                                        <input type="radio" id="felony-yes" name="felony" onclick="felonyCheck();" value="Yes">
+                                        <label for="felony-yes">Yes</label>
+                                    </div>
+                                    <div class="radio">
+                                        <input type="radio" id="felony-no" name="felony" onclick="felonyCheck();" value="No">
+                                        <label for="felony-no">No</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col" id="felonyYes" style="display: none;">
+                                <label for="explainFelonys">Please explain the felony(s).</label>
+                                <textarea id="explainFelonys" rows="4"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <h4>Working With Us</h4>
+                        <p>How would you fit working with us?</p>
+                        <div class="grid">
+                            <div class="col">
+                                <label for="desiredpay-hourly">What's your desired pay? <span class="required">*</span></label>
+                                <div class="grid">
+                                    <div class="radio">
+                                        <input type="radio" id="desiredpay-hourly" name="desiredpay" value="Hourly">
+                                        <label for="desiredpay-hourly">Hourly</label>
+                                    </div>
+                                    <div class="radio">
+                                        <input type="radio" id="desiredpay-salary" name="desiredpay" value="Salary">
+                                        <label for="desiredpay-salary">Salary</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <label for="desiredpay-full">Employment Desired <span class="required">*</span></label>
+                                <div class="grid">
+                                    <div class="radio">
+                                        <input type="radio" id="employmentdesired-full" name="employmentdesired" value="Full Time">
+                                        <label for="employmentdesired-full">Full Time</label>
+                                    </div>
+                                    <div class="radio">
+                                        <input type="radio" id="employmentdesired-part" name="employmentdesired" value="Part Time">
+                                        <label for="employmentdesired-part">Part Time</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <label for="offerresponse">What do you think you could offer to this position? <span class="required">*</span></label>
+                            <textarea id="offerresponse" rows="4"></textarea>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <h4>Documents</h4>
+                        <p>Let's see your paper work!</p>
+                        <div class="grid">
+                            <div class="col">
+                                <label for="resume">Resume <span class="required">*</span></label>
+                                <input type="file" id="resume">
+                            </div>
+                            <div class="col">
+                                <label for="birthcertif">Birth Certificate <span class="required">*</span></label>
+                                <input type="file" id="birthcertif">
+                            </div>
+                            <div class="col">
+                                <label for="certification">Certification <span class="required">*</span></label>
+                                <input type="file" id="certification">
+                            </div>
+                            <div class="col">
+                                <label for="residentcard">Resident Citizen ID Card</label>
+                                <input type="file" id="residentcard">
+                            </div>
+                            <div class="col">
+                                <label for="criminalbackground">Criminal Background</label>
+                                <input type="file" id="criminalbackground">
+                            </div>
+                            <div class="col">
+                                <label for="workpermit">Work Permit</label>
+                                <input type="file" id="workpermit">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="confirmation">
+                            <h4>You're Done!</h4>
+                            <p>You have now completed the application, but before you submit, are you sure you want to send this in for submission? If you feel you have information that's incorrect, feel free to contact <a href="mailto:compassionatesupport@business.co">compassionatesupport@business.co</a> and we'll be delighted to change it up for you. In the meantime, sit back and relax!</p>
+                            <div>
+                                <a href="success.html" class="button">Submit Application</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <button class="prev" disabled>Previous</button>
+                <button class="next">Next</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer_container">
+            <div class="footer_content">
+                <div>
+                    <a href="../index.html" class="footer_logo">Compassionate Rides</a>
+                    <p class="footer_description">Create and rebuild your community or home today with no limits. Be the main staple to your community for future generations to reside in.</p>
+                </div>
+                <div class="footer_data">
+                    <div>
+                        <h3 class="footer_title">About</h3>
+                        <ul class="footer_links">
+                            <li>
+                                <a href="#" class="footer_link">About Us</a>
+                            </li>
+                            <li>
+                                <a href="index.html" class="footer_link">Careers</a>
+                            </li>
+                            <li>
+                                <a href="../faqs.html" class="footer_link">FAQs</a>
+                            </li>
+                            <li>
+                                <a href="../photogallery" class="footer_link">Photo Gallery</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="footer_title">Services</h3>
+                        <ul class="footer_links">
+                            <li>
+                                <a href="#" class="footer_link">Elder Care</a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer_link">Special Education</a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer_link">Families</a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer_link">Less Unfortunate</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="footer_title">Support</h3>
+                        <ul class="footer_links">
+                            <li>
+                                <a href="../privacy.html" class="footer_link">Privacy Policy</a>
+                            </li>
+                            <li>
+                                <a href="../terms.html" class="footer_link">Terms & Services</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_bottom">
+                <span class="footer_copy">
+                    <i class="ri-copyright-line"></i>
+                    Copyright Compassionate Rides. All rights reserved
+                </span>
+                <div class="footer_socials">
+                    <li>
+                        <a href="https://www.facebook.com/profile.php?id=100069520564975" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/berkeleystagsfbla/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/FBLA_National?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/home" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/form.js"></script>
+</body>
+</html>
